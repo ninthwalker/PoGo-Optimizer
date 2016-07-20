@@ -2,8 +2,7 @@ FROM node
 
 RUN apt-get update -qq
 RUN apt-get install -yqq libprotobuf-dev
-RUN npm install -g --silent bower@1.7.1 
-# RUN npm --registry http://registry.npmjs.eu/ -g install bower --silent
+RUN npm install -g --silent bower
 
 RUN mkdir /code
 WORKDIR /code
@@ -11,6 +10,7 @@ WORKDIR /code
 ADD . /code/
 
 RUN npm install --silent
+RUN bower init
 RUN bower install --allow-root --silent
 
 EXPOSE 8081
