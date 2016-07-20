@@ -10,8 +10,8 @@ WORKDIR /code
 ADD . /code/
 
 RUN npm install --silent
-RUN bower init --allow-root --silent
-RUN bower install --allow-root --silent
+# RUN bower init --allow-root --silent
+# RUN bower install --allow-root --silent
 
 EXPOSE 8081
 EXPOSE 3000
